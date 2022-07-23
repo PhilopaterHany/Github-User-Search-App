@@ -2,7 +2,11 @@ const theInput = document.querySelector(".get-repos input");
 const getButton = document.querySelector(".get-button");
 const reposData = document.querySelector(".show-data");
 
-getButton.addEventListener("click", getRepos);
+getButton.addEventListener("click", () => {
+    reposData.innerHTML = "";
+    getStats();
+    getRepos();
+});
 theInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         reposData.innerHTML = "";
