@@ -2,17 +2,14 @@ const theInput = document.querySelector(".get-repos input");
 const getButton = document.querySelector(".get-button");
 const reposData = document.querySelector(".show-data");
 
-getButton.addEventListener("click", () => {
+function getFinalData() {
     reposData.innerHTML = "";
     getStats();
     getRepos();
-});
+}
+getButton.addEventListener("click", getFinalData);
 theInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        reposData.innerHTML = "";
-        getStats();
-        getRepos();
-    }
+    if (e.key === "Enter") getFinalData();
 });
 function getStats() {
     if (theInput.value == "") {
