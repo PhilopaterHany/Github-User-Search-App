@@ -1,6 +1,7 @@
 const theInput = document.querySelector(".get-repos input");
 const getButton = document.querySelector(".get-button");
 const reposData = document.querySelector(".show-data");
+const copyYear = document.querySelector("footer .year");
 
 function getFinalData() {
     reposData.innerHTML = "";
@@ -155,3 +156,5 @@ function getRepos() {
             });
     }
 }
+
+copyYear.innerHTML = new Date().getFullYear();
