@@ -66,11 +66,19 @@ function getStats() {
                     let userLocation = document.createElement("p");
                     userLocation.innerHTML = `<img src="images/location-dot-solid.svg" alt="Location" /><span>${user.location}</span>`;
                     links.appendChild(userLocation);
+                } else {
+                    let userLocation = document.createElement("p");
+                    userLocation.innerHTML = `<img src="images/location-dot-solid.svg" alt="Location" /><span>Unavailable</span>`;
+                    links.appendChild(userLocation);
                 }
 
                 if (user.twitter_username) {
                     let twitterUserName = document.createElement("p");
                     twitterUserName.innerHTML = `<img src="images/twitter-brands.svg" alt="Twitter" /><a href=https://twitter.com/${user.twitter_username} target="_blank">${user.twitter_username}</a>`;
+                    links.appendChild(twitterUserName);
+                } else {
+                    let twitterUserName = document.createElement("p");
+                    twitterUserName.innerHTML = `<img src="images/twitter-brands.svg" alt="Twitter" /><span>Unavailable</span>`;
                     links.appendChild(twitterUserName);
                 }
 
@@ -78,11 +86,19 @@ function getStats() {
                     let userBlog = document.createElement("p");
                     userBlog.innerHTML = `<img src="images/link-solid.svg" alt="Link" /><a href=${user.blog} target="_blank">${user.blog}</a>`;
                     links.appendChild(userBlog);
+                } else {
+                    let userBlog = document.createElement("p");
+                    userBlog.innerHTML = `<img src="images/link-solid.svg" alt="Link" /><span>Unavailable</span>`;
+                    links.appendChild(userBlog);
                 }
 
                 if (user.company) {
                     let userCompany = document.createElement("p");
                     userCompany.innerHTML = `<img src="images/building-solid.svg" alt="Company" /><span>${user.company}</span>`;
+                    links.appendChild(userCompany);
+                } else {
+                    let userCompany = document.createElement("p");
+                    userCompany.innerHTML = `<img src="images/building-solid.svg" alt="Company" /><span>Unavailable</span>`;
                     links.appendChild(userCompany);
                 }
 
