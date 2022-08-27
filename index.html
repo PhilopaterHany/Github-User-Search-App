@@ -3,27 +3,39 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Github Stats</title>
+        <title>Github User Stats</title>
+        <link rel="icon" href="images/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;500;700&display=swap"
+        />
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <main class="main-container">
-            <div class="get-repos">
+        <main>
+            <header>
                 <img
                     src="images/magnifying-glass-solid.svg"
                     alt="Search Lens"
                 />
-                <input type="text" placeholder="Enter Github Username" />
-                <span class="get-button">Get User's Data</span>
-            </div>
-            <div class="show-data">
-                <span class="instruct">
-                    User's Repositories Will Appear Here.
-                </span>
-            </div>
+                <input
+                    type="text"
+                    id="user-input"
+                    placeholder="Enter Github Username"
+                />
+                <button type="button" class="get-button">Look Up</button>
+            </header>
+            <section class="show-data"></section>
         </main>
         <footer>
-            <p>Made By <span>Philopater Hany</span></p>
+            <p>
+                Made By
+                <a href="https://github.com/PhilopaterHany/" target="_blank"
+                    >Philopater Hany</a
+                >
+            </p>
             <p>Copyrights at <span class="year"></span> &copy;</p>
             <p>All Rights Reserved &reg;</p>
         </footer>

@@ -1,7 +1,10 @@
 :root {
-    --main-color: #0077ff;
-    --dark-bg: #141c2f;
-    --dark-bg-alt: #1f2a48;
+    --dark-bg: #141d2f;
+    --dark-bg-alt: #1e2a47;
+    --main-color: #0079ff;
+    --main-text-color: #d7d7d7;
+    --main-transition: 200ms ease-in-out;
+    --main-bRad: 15px;
 }
 ::selection {
     background-color: var(--main-color);
@@ -25,258 +28,389 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    color: #fff;
-    font-family: sans-serif;
+    color: var(--main-text-color);
     background-color: var(--dark-bg);
+    font-family: "Space Mono", monospace;
 }
 a {
-    color: #000;
+    color: var(--main-text-color);
     text-decoration: none;
 }
-.main-container {
-    margin: 30px auto;
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 25px auto;
     padding-inline: 15px;
-}
-.main-container .get-repos {
-    position: relative;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    border: 1px solid var(--main-color);
-    background-color: var(--dark-bg);
+    flex-direction: column;
+    gap: 25px;
 }
-.main-container .get-repos img {
+main header {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    background-color: var(--dark-bg-alt);
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
+}
+main header img {
     position: absolute;
-    top: 37px;
-    left: 35px;
+    top: 27px;
+    left: 25px;
     width: 16px;
     pointer-events: none;
 }
-.main-container .get-repos input {
+main header input {
     flex: 1;
-    padding: 15px 20px 15px 50px;
+    padding: 15px 110px 15px 50px;
+    height: 100%;
+    width: 100%;
     border: none;
-    font-size: 18px;
-    background-color: var(--dark-bg-alt);
+    font-size: 1.125em;
     caret-color: var(--main-color);
+    color: var(--main-text-color);
+    background-color: transparent;
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
 }
-.main-container .get-repos input:focus {
-    outline: 2px solid var(--main-color);
+main header input:focus {
+    outline: none;
 }
-.main-container .get-repos input,
-.main-container .get-repos input::placeholder {
-    color: #fff;
-}
-.main-container .get-repos .get-button {
+main header .get-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     padding: 15px 20px;
+    border: none;
     outline: none;
     text-align: center;
     background-color: var(--main-color);
     color: #fff;
     cursor: pointer;
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    transition: var(--main-transition);
 }
-.main-container .show-data {
-    padding: 20px;
-    background-color: var(--dark-bg);
-    border: 1px solid var(--main-color);
+main header .get-button:hover {
+    background-color: #60abff;
+}
+main .show-data {
+    width: 100%;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    background-color: var(--dark-bg-alt);
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
 }
-.main-container .show-data .error {
+main .show-data .error {
     color: #b00020;
     font-weight: bold;
 }
-.main-container .show-data .instruct {
-    color: #fff;
-    font-weight: bold;
-}
-.main-container .show-data .stats-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
+main .show-data .user-stats {
     width: 100%;
 }
-.main-container .show-data .stats-box img {
-    width: 150px;
-    height: 150px;
+main .show-data .user-stats .user-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+main .show-data .user-stats .user-header .user-avatar {
+    width: 200px;
+    height: 200px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
 }
-.main-container .show-data .stats-box .names {
-    text-align: center;
+main .show-data .user-stats .user-header .info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
 }
-.main-container .show-data .stats-box .names a {
+main .show-data .user-stats .user-header .info .user-name {
+    margin-bottom: -10px;
+    font-size: 1.3em;
+}
+main .show-data .user-stats .user-header .info .user-login-name {
     color: var(--main-color);
 }
-.main-container .show-data .stats-box .names p {
-    margin-top: 10px;
+main .show-data .user-stats .user-header .info .join-date {
+    margin-top: 7px;
+    font-size: 0.85em;
 }
-.main-container .show-data .stats-box .stats {
+main .show-data .user-stats .user-bio {
+    margin-left: 231px;
+    margin-top: -30px;
+    opacity: 0.5;
+}
+main .show-data .user-stats .stats {
+    min-height: 90px;
+    margin-top: 50px;
     display: flex;
-    margin-top: 25px;
+    justify-content: center;
     gap: 25px;
-    padding: 20px;
-    background-color: var(--dark-bg-alt);
+    background-color: var(--dark-bg);
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
 }
-.main-container .show-data .stats-box .stats p {
+main .show-data .user-stats .stats a {
+    padding-block: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-basis: calc(calc(100% - 50px) / 3);
 }
-.main-container .show-data .stats-box .stats p a {
+main .show-data .user-stats .stats a span:first-child {
     font-weight: bold;
     color: var(--main-color);
 }
-.main-container .show-data .stats-box .links {
+main .show-data .user-stats .stats a span:last-child {
+    display: block;
+    font-size: 1.25em;
+    color: var(--main-text-color);
+}
+main .show-data .user-stats .links {
     width: 100%;
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
     background-color: var(--dark-bg);
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
 }
-.main-container .show-data .stats-box .links p {
+main .show-data .user-stats .links p {
+    padding-block: 25px;
     display: inline-flex;
-    align-items: center;
-    margin-inline: 15px;
-    height: 60px;
+    justify-content: center;
+    width: 50%;
 }
-.main-container .show-data .stats-box .links p img {
-    position: relative;
-    bottom: 2px;
-    right: 3px;
+main .show-data .user-stats .links p.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+main .show-data .user-stats .links p img {
     width: 15px;
+    user-select: none;
     pointer-events: none;
 }
-.main-container .show-data .stats-box .links p a {
+main .show-data .user-stats .links p a {
     color: #fff;
 }
-.main-container .show-data .stats-box .links p *:not(img) {
-    position: relative;
-    bottom: 1px;
-    left: 5px;
+main .show-data .user-stats .links p.disabled a {
+    cursor: not-allowed;
 }
-.main-container .show-data .repo-box {
+main .show-data .user-stats .links p *:not(img) {
+    margin-left: 5px;
+}
+main .show-data > h2 {
+    text-align: center;
+    margin-block: 80px 40px;
+}
+main .show-data .user-repos {
     width: 100%;
-    padding: 15px;
-    background-color: var(--dark-bg-alt);
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
-.main-container .show-data .repo-box .repo-name {
-    margin-bottom: 15px;
-    font-size: 22px;
+main .show-data .user-repos .repo-box {
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--dark-bg);
+    -webkit-border-radius: var(--main-bRad);
+    -moz-border-radius: var(--main-bRad);
+    -ms-border-radius: var(--main-bRad);
+    -o-border-radius: var(--main-bRad);
+    border-radius: var(--main-bRad);
 }
-.main-container .show-data .repo-box .repo-date {
+main .show-data .user-repos .repo-box .repo-name {
+    margin: 0;
+    font-size: 1em;
+    text-align: center;
+}
+main .show-data .user-repos .repo-box .dates {
+    width: 100%;
+}
+main .show-data .user-repos .repo-box .dates .repo-date {
     font-weight: 300;
-    font-size: 14px;
-    margin-bottom: 5px;
+    font-size: 0.75em;
+    text-align: center;
 }
-.main-container .show-data .repo-box .repo-date span {
+main .show-data .user-repos .repo-box .dates .repo-date span {
     font-weight: bold;
     color: var(--main-color);
 }
-.main-container .show-data .repo-box .span-holder {
-    margin-top: 10px;
+main .show-data .user-repos .repo-box .span-holder {
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    gap: 5px;
 }
-.main-container .show-data .repo-box .span-holder a,
-.main-container .show-data .repo-box .span-holder span {
-    float: right;
-    margin-left: 4px;
-    border-radius: 4px;
+main .show-data .user-repos .repo-box .span-holder a,
+main .show-data .user-repos .repo-box .span-holder span {
+    width: 100%;
+    padding: 5px;
     color: #fff;
-    font-size: 12px;
-    width: 90px;
+    font-size: 0.75em;
     text-align: center;
-    padding: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
 }
-.main-container .show-data .repo-box .span-holder a,
-.main-container .show-data .repo-box .span-holder span {
-    width: fit-content;
-    padding: 5px 10px;
+main .show-data .user-repos .repo-box .span-holder a,
+main .show-data .user-repos .repo-box .span-holder span:first-of-type {
+    width: calc(50% - 2.5px);
 }
-.main-container .show-data .repo-box .span-holder a {
+main .show-data .user-repos .repo-box .span-holder a {
     background-color: #e91e63;
 }
-.main-container .show-data .repo-box .span-holder span {
+main .show-data .user-repos .repo-box .span-holder span {
     background-color: #3f51b5;
 }
 footer {
-    background-color: var(--dark-bg-alt);
-    padding: 10px;
     margin-top: 10px;
+    padding: 10px;
+    background-color: var(--dark-bg-alt);
 }
 footer p {
     margin: 10px 0;
     text-align: center;
     color: #fff;
 }
-footer p span {
-    color: var(--main-color);
+footer p span,
+footer p a {
     font-weight: bold;
+    color: var(--main-color);
 }
-@media (max-width: 400px) {
-    .main-container .show-data .stats-box .stats {
-        width: 100%;
+@media (max-width: 922px) {
+    main .show-data .user-stats .user-header .info {
         flex-direction: column;
     }
-    .main-container .show-data .repo-box .span-holder a,
-    .main-container .show-data .repo-box .span-holder span {
-        width: 100% !important;
+    main .show-data .user-stats .user-header .info .join-date {
+        margin: unset;
     }
 }
 @media (max-width: 767px) {
-    .main-container .get-repos {
+    main .get-repos {
         flex-direction: column;
     }
-    .main-container .get-repos input,
-    .main-container .get-repos .get-button {
+    main .show-data .user-stats .links p {
         width: 100%;
     }
-    .main-container .show-data .repo-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    main .get-repos input,
+    main .get-repos .get-button {
+        width: 100%;
+    }
+    main .show-data .user-stats .stats {
         flex-direction: column;
-        gap: 20px;
     }
-    .main-container .show-data .repo-box .repo-name {
-        text-align: center;
+    main .show-data .user-repos .repo-box .repo-name {
+        font-size: 1.25em;
     }
-    .main-container .show-data .repo-box .span-holder {
+    main .show-data .user-repos .repo-box .dates .repo-date {
+        font-size: 0.8em;
+    }
+    main .show-data .user-repos .repo-box .span-holder {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+        flex-direction: row-reverse;
         gap: 5px;
         margin: unset !important;
     }
-    .main-container .show-data .repo-box .span-holder a,
-    .main-container .show-data .repo-box .span-holder span {
-        width: calc(50% - 9px);
+    main .show-data .user-repos .repo-box .span-holder span:last-of-type {
+        width: 100%;
     }
 }
-@media (min-width: 768px) {
-    .main-container {
-        width: 738px;
+@media (max-width: 680px) {
+    main .show-data .user-stats .user-header {
+        flex-direction: column;
+    }
+    main .show-data .user-stats .user-header .info .user-name {
+        margin-bottom: -5px;
+        text-align: center;
+    }
+    main .show-data .user-stats .user-header .info .user-login-name {
+        display: block;
+        text-align: center;
+    }
+    main .show-data .user-stats .user-header .info .join-date {
+        margin: 20px 0 0 !important;
+    }
+    main .show-data .user-stats .user-bio {
+        margin: unset;
+        text-align: center;
+    }
+    main .show-data .user-stats .user-header .info {
+        margin-bottom: 15px;
+    }
+    main .show-data .user-stats .stats {
+        margin-top: 30px;
     }
 }
-@media (min-width: 992px) {
-    .main-container {
-        width: 962px;
+@media (max-width: 500px) {
+    body {
+        font-size: 14px;
     }
-}
-@media (min-width: 1200px) {
-    .main-container {
-        width: 1170px;
+    main {
+        width: 100%;
+    }
+    main .show-data {
+        padding: 10px;
+    }
+    main .show-data .user-stats .stats {
+        width: 100%;
+        flex-direction: column;
+    }
+    main .show-data > h2 {
+        margin-block: 30px 15px;
+    }
+    main .show-data .user-repos .repo-box .repo-name {
+        font-size: 1.2em;
+    }
+    main .show-data .user-repos .repo-box .dates .repo-date {
+        font-size: 0.9em;
+    }
+    main .show-data .user-repos .repo-box .span-holder a,
+    main .show-data .user-repos .repo-box .span-holder span {
+        width: 100% !important;
     }
 }
