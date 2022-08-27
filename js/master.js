@@ -2,26 +2,11 @@ const theInput = document.getElementById("user-input");
 const getButton = document.querySelector("main header .get-button");
 const userData = document.querySelector("main .show-data");
 const copyYear = document.querySelector("footer p .year");
-const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function formatDate(date) {
     let datesegments = date.split("T").shift().split("-");
-    return `${datesegments[2]} ${months[datesegments[1] - 1]}, ${
-        datesegments[0]
-    }`;
+    return `${datesegments[2]} ${months[datesegments[1] - 1]}, ${datesegments[0]}`;
 }
 
 function checkNull(type, text) {
@@ -102,9 +87,7 @@ function getStats(username) {
 
             let joinDate = document.createElement("p");
             joinDate.className = "join-date";
-            joinDate.innerHTML = `Joined GitHub On ${formatDate(
-                user.created_at
-            )}`;
+            joinDate.innerHTML = `Joined GitHub On ${formatDate(user.created_at)}`;
             info.appendChild(joinDate);
 
             let userBio = document.createElement("p");
@@ -176,16 +159,12 @@ function getRepos(username) {
 
                 let dateCreated = document.createElement("p");
                 dateCreated.className = "repo-date";
-                dateCreated.innerHTML = `<span>Created At:</span> ${formatDate(
-                    repo.created_at
-                )}`;
+                dateCreated.innerHTML = `<span>Created At:</span> ${formatDate(repo.created_at)}`;
                 datesHolder.appendChild(dateCreated);
 
                 let dateUpdated = document.createElement("p");
                 dateUpdated.className = "repo-date";
-                dateUpdated.innerHTML = `<span>Updated At:</span> ${formatDate(
-                    repo.pushed_at
-                )}`;
+                dateUpdated.innerHTML = `<span>Updated At:</span> ${formatDate(repo.pushed_at)}`;
                 datesHolder.appendChild(dateUpdated);
 
                 let spanHolder = document.createElement("div");
