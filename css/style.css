@@ -229,6 +229,7 @@ main .show-data .user-stats .links p a {
 }
 main .show-data .user-stats .links p.disabled a {
     cursor: not-allowed;
+    pointer-events: none;
 }
 main .show-data .user-stats .links p *:not(img) {
     margin-left: 5px;
