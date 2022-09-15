@@ -76,7 +76,7 @@ function getStats(username) {
 
             let userName = document.createElement("h3");
             userName.className = "user-name";
-            userName.innerHTML = user.name;
+            userName.innerHTML = user.name || user.login;
             names.appendChild(userName);
 
             let userLogin = document.createElement("a");
@@ -92,7 +92,7 @@ function getStats(username) {
 
             let userBio = document.createElement("p");
             userBio.className = "user-bio";
-            userBio.innerHTML = user.bio || `${user.name} doesn't have a bio`;
+            userBio.innerHTML = user.bio || `${user.name || user.login} doesn't have a bio`;
             userStats.appendChild(userBio);
 
             let stats = document.createElement("div");
@@ -127,7 +127,7 @@ function getStats(username) {
             links.appendChild(checkNull("blog", user.blog));
 
             let sectionTitle = document.createElement("h2");
-            sectionTitle.innerHTML = `${user.name}'s Repositories`;
+            sectionTitle.innerHTML = `${user.name || user.login}'s Repositories`;
             userData.appendChild(sectionTitle);
         })
         .catch(() => {
