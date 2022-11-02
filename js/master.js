@@ -201,7 +201,7 @@ function getFinalData(username) {
     }
 }
 
-getButton.addEventListener("click", getFinalData(theInput.value.trim()));
+getButton.addEventListener("click", () => getFinalData(theInput.value.trim()));
 theInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") getFinalData(theInput.value.trim());
 });
