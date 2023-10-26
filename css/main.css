@@ -137,6 +137,7 @@ main .show-data .user-stats .user-header {
     gap: 30px;
 }
 main .show-data .user-stats .user-header .user-avatar {
+    margin-top: 3px;
     width: 200px;
     height: 200px;
     -webkit-border-radius: 50%;
@@ -146,25 +147,28 @@ main .show-data .user-stats .user-header .user-avatar {
     border-radius: 50%;
 }
 main .show-data .user-stats .user-header .info {
-    flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 35px;
+    flex-direction: column;
+    height: 185px;
 }
-main .show-data .user-stats .user-header .info .user-name {
+main .show-data .user-stats .user-header .info .info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+main .show-data .user-stats .user-header .info .info-wrapper .names .user-name {
     margin-bottom: -10px;
     font-size: 1.3em;
 }
-main .show-data .user-stats .user-header .info .user-login-name {
+main .show-data .user-stats .user-header .info .info-wrapper .user-login-name {
     color: var(--main-color);
 }
-main .show-data .user-stats .user-header .info .join-date {
+main .show-data .user-stats .user-header .info .info-wrapper .join-date {
     margin-top: 7px;
     font-size: 0.85em;
 }
 main .show-data .user-stats .user-bio {
-    margin-left: 231px;
-    margin-top: -30px;
     opacity: 0.5;
 }
 main .show-data .user-stats .stats {
@@ -221,6 +225,7 @@ main .show-data .user-stats .links p.disabled {
 }
 main .show-data .user-stats .links p img {
     width: 15px;
+    margin-right: 5px;
     user-select: none;
     pointer-events: none;
 }
@@ -228,9 +233,11 @@ main .show-data .user-stats .links p a {
     color: #fff;
 }
 main .show-data .user-stats .links p.disabled a {
+    display: flex;
+    align-items: center;
     cursor: not-allowed;
-    pointer-events: none;
     user-select: none;
+    pointer-events: none;
 }
 main .show-data .user-stats .links p *:not(img) {
     margin-left: 5px;

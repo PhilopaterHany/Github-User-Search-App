@@ -60,19 +60,27 @@ function getStats(username) {
             userHeader.className = "user-header";
             userStats.appendChild(userHeader);
 
+            let imageHolder = document.createElement("div");
+            imageHolder.className - "image-holder";
+            userHeader.appendChild(imageHolder);
+
             let userImage = document.createElement("img");
             userImage.className = "user-avatar";
             userImage.src = user.avatar_url;
             userImage.alt = user.name;
-            userHeader.appendChild(userImage);
+            imageHolder.appendChild(userImage);
 
             let info = document.createElement("div");
             info.className = "info";
             userHeader.appendChild(info);
 
+            let infoWrapper = document.createElement("div");
+            infoWrapper.className = "info-wrapper";
+            info.appendChild(infoWrapper);
+
             let names = document.createElement("div");
             names.className = "names";
-            info.appendChild(names);
+            infoWrapper.appendChild(names);
 
             let userName = document.createElement("h3");
             userName.className = "user-name";
@@ -88,12 +96,12 @@ function getStats(username) {
             let joinDate = document.createElement("p");
             joinDate.className = "join-date";
             joinDate.innerHTML = `Joined GitHub On ${formatDate(user.created_at)}`;
-            info.appendChild(joinDate);
+            infoWrapper.appendChild(joinDate);
 
             let userBio = document.createElement("p");
             userBio.className = "user-bio";
             userBio.innerHTML = user.bio || `${user.name || user.login} doesn't have a bio`;
-            userStats.appendChild(userBio);
+            info.appendChild(userBio);
 
             let stats = document.createElement("div");
             stats.className = "stats";
